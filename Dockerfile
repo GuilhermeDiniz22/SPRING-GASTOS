@@ -1,5 +1,5 @@
-# Usa a imagem do Maven para construir o projeto
-FROM maven:3.8.6-openjdk-17 AS build
+# Usa a imagem do Maven com JDK 17 para construir o projeto
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 
 # Define o diretório de trabalho
 WORKDIR /app
@@ -24,5 +24,6 @@ EXPOSE 8080
 
 # Comando para rodar o aplicativo
 CMD ["java", "-jar", "app.jar"]
+
 
 
