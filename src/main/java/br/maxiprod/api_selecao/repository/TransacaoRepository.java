@@ -1,0 +1,13 @@
+package br.maxiprod.api_selecao.repository;
+
+import br.maxiprod.api_selecao.models.Transacao;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import java.util.List;
+
+@RepositoryRestResource(exported = false)
+public interface TransacaoRepository extends JpaRepository<Transacao, Long> {
+
+    List<Transacao> findTransacoesByPessoaId(Long pessoaId);
+}
