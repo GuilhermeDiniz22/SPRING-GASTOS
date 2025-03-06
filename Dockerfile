@@ -5,11 +5,12 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copia o arquivo JAR gerado pelo Maven/Gradle para o container
-COPY api-selecao-0.0.1-SNAPSHOT.jar app.jar
+COPY target/api-selecao-0.0.1-SNAPSHOT.jar app.jar
 
 # Expõe a porta do Spring Boot (Render já configura isso automaticamente)
 EXPOSE 8080
 
 # Comando para rodar o aplicativo
 CMD ["java", "-jar", "app.jar"]
+
 
